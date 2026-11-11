@@ -24,13 +24,67 @@ def read_catalog(path=DATA):
 
 
 def validate_catalog(data):
+    """Reject malformed JSON before the CLI's consumers access catalog fields."""
+    if not isinstance(data, dict):
+        return ["Catalog must be an object"]
+
     errors = []
-    if data.get("schema_version") != 2:
+    if type(data.get("schema_version")) is not int or data["schema_version"] != 2:
         errors.append("Unsupported schema_version")
     try:
         datetime.date.fromisoformat(data["as_of"])
     except (KeyError, TypeError, ValueError):
         errors.append("as_of must be an ISO date")
+    if not isinstance(data.get("snapshot"), str) or not data["snapshot"].strip():
+        errors.append("snapshot must be a non-empty string")
+    for field in ("sources", "skills", "evidence", "tools"):
+        if not isinstance(data.get(field), list):
+            errors.append(f"{field} must be an array")
+            continue
+        for index, record in enumerate(data[field]):
+            if not isinstance(record, dict):
+                errors.append(f"{field}[{index}] must be an object")
+    if errors:
+        return errors
+
+    text_fields = {
+        "sources": ("repo", "url", "commit", "license", "note", "kind"),
+        "skills": ("repo", "path", "commit", "blob_sha", "url", "name",
+                   "purpose", "requires", "note", "category", "review_level"),
+        "evidence": ("repo", "path", "url", "blob_sha"),
+        "tools": ("repo", "name", "group", "purpose", "requires", "note",
+                  "url", "review_level"),
+    }
+    for field, required in text_fields.items():
+        for index, record in enumerate(data[field]):
+            label = f"{field}[{index}]"
+            for key in required:
+                if not isinstance(record.get(key), str) or not record[key].strip():
+                    errors.append(f"{label}.{key} must be a non-empty string")
+            if "reviewed_at" in record:
+                try:
+                    datetime.date.fromisoformat(record["reviewed_at"])
+                except (TypeError, ValueError):
+                    errors.append(f"{label}.reviewed_at must be an ISO date")
+    for index, source in enumerate(data["sources"]):
+        for key in ("license_url", "readme_url"):
+            value = source.get(key)
+            if value is not None and (not isinstance(value, str) or not value.strip()):
+                errors.append(f"sources[{index}].{key} must be a non-empty string or null")
+        for key in ("license_blob_sha", "readme_blob_sha"):
+            value = source.get(key)
+            if value is not None and (not isinstance(value, str) or not SHA.fullmatch(value)):
+                errors.append(f"sources[{index}].{key} must be a SHA or null")
+    for index, entry in enumerate(data["skills"]):
+        if type(entry.get("id")) is not int or entry["id"] < 1:
+            errors.append(f"Invalid entry ID: skills[{index}].id")
+        tags = entry.get("tags")
+        if not isinstance(tags, list) or not tags or any(
+                not isinstance(tag, str) or not tag.strip() for tag in tags):
+            errors.append(f"skills[{index}].tags must be a non-empty array of non-empty strings")
+    if errors:
+        return errors
+
     sources = {}
     for source in data.get("sources", []):
         repo = source.get("repo", "")
@@ -93,6 +147,9 @@ def validate_catalog(data):
         if source is None or not SHA.fullmatch(evidence.get("blob_sha", "")):
             errors.append(f"Invalid supporting evidence: {repo}")
             continue
+        path = evidence["path"]
+        if path.startswith("/") or ".." in Path(path).parts:
+            errors.append(f"Invalid supporting evidence path: {repo}")
         expected = f"https://github.com/{repo}/blob/{source['commit']}/{evidence.get('path')}"
         if evidence.get("url") != expected:
             errors.append(f"Supporting evidence URL mismatch: {repo}")
@@ -217,10 +274,18 @@ def local_link_errors(root):
         targets = re.findall(r"!?\[[^\]]*\]\(([^\s)]+)\)", content)
         targets += re.findall(r'(?:href|src)="([^"]+)"', content)
         for target in targets:
-            parsed = urlsplit(target)
+            try:
+                parsed = urlsplit(target)
+            except ValueError:
+                errors.append(f"Invalid link target: {path.relative_to(root)} -> {target}")
+                continue
             if parsed.scheme or parsed.netloc or not parsed.path:
                 continue
-            resolved = (path.parent / unquote(parsed.path)).resolve()
+            try:
+                resolved = (path.parent / unquote(parsed.path)).resolve()
+            except (OSError, ValueError):
+                errors.append(f"Invalid local file link: {path.relative_to(root)} -> {target}")
+                continue
             if not resolved.is_relative_to(root.resolve()) or not resolved.exists():
                 errors.append(f"Broken local file link: {path.relative_to(root)} -> {target}")
     return errors

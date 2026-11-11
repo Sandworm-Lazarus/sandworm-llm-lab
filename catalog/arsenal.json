@@ -1661,7 +1661,7 @@
       "reviewed_at": "2026-11-11"
     }
   ],
-  "snapshot": "2026-11-11-sandworm-llm-lab",
+  "snapshot": "2026-11-11-mcp-typescript-privacy-sandworm-llm-lab",
   "collection": {
     "name": "sandworm-llm-lab",
     "hub": "https://github.com/Sandworm-Lazarus/sandworm-arsenal",
