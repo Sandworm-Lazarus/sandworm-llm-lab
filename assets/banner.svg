@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+<title id="title">Sandworm LLM Lab</title><desc id="desc">A practical LLM engineering lab: model serving, quantization, RAG, evaluation, training, and experiment observability.</desc>
+<rect width="1200" height="280" rx="20" fill="#121b21"/>
+<path d="M850 0v280M920 0v280M990 0v280M1060 0v280M1130 0v280M815 70h385M815 140h385M815 210h385" stroke="#29363c"/>
+<rect x="48" y="42" width="7" height="20" rx="3" fill="#87d4d4"/>
+<text x="72" y="59" fill="#87d4d4" font-family="monospace" font-size="17" letter-spacing="3">SANDWORM COLLECTIONS</text>
+<text x="46" y="151" fill="#f3f1e7" font-family="Arial,sans-serif" font-size="65" font-weight="700" letter-spacing="-2">LLM LAB</text>
+<text x="49" y="211" fill="#87d4d4" font-family="Arial,sans-serif" font-size="20">INFERENCE / RAG / EVALUATION / TRAINING</text>
+<circle cx="1060" cy="140" r="58" fill="none" stroke="#87d4d4" stroke-width="19"/>
+<circle cx="1060" cy="140" r="18" fill="#87d4d4"/>
+</svg>
