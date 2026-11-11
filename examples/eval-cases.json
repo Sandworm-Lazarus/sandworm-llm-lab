@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "thai-shipping",
+      "expected": {"answers": ["ค่าจัดส่ง 25 บาท"], "citations": ["shipping-policy"], "abstain": false},
+      "prediction": {"answer": "  ค่าจัดส่ง   25 บาท\n", "citations": ["shipping-policy"], "abstain": false}
+    },
+    {
+      "id": "english-cache-mismatch",
+      "expected": {"answers": ["Cache expires after 10 minutes."], "citations": ["cache-guide"], "abstain": false},
+      "prediction": {"answer": "Cache expires after 15 minutes.", "citations": [], "abstain": false}
+    },
+    {
+      "id": "thai-hours-extra-citation",
+      "expected": {"answers": ["เปิดบริการ 09:00–17:00"], "citations": ["hours"], "abstain": false},
+      "prediction": {"answer": "เปิดบริการ 09:00–17:00", "citations": ["hours", "unrelated"], "abstain": false}
+    },
+    {
+      "id": "english-authored-alias",
+      "expected": {"answers": ["Colour: blue.", "Color: blue."], "citations": ["palette"], "abstain": false},
+      "prediction": {"answer": "Color: blue.", "citations": ["palette"], "abstain": false}
+    },
+    {
+      "id": "unknown-account-abstention",
+      "expected": {"answers": [], "citations": [], "abstain": true},
+      "prediction": {"answer": "", "citations": [], "abstain": true}
+    },
+    {
+      "id": "unknown-npc-fabricated-answer",
+      "expected": {"answers": [], "citations": [], "abstain": true},
+      "prediction": {"answer": "NPC สมมติอยู่ที่เมืองดาวม่วง", "citations": ["made-up"], "abstain": false}
+    }
+  ]
+}

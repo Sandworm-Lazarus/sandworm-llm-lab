@@ -10,6 +10,15 @@ A practical LLM engineering lab: model serving, quantization, RAG, evaluation, t
 
 [ภาษาไทย](README.th.md) · [Skills](CATALOG.md) · [Tools](TOOLS.md) · [Start here](docs/start-here.md) · [Sources](SOURCES.md) · [Collection hub](https://github.com/Sandworm-Lazarus/sandworm-arsenal)
 
+## Original tool: Recorded Answer Evaluator
+
+Authored implementation, documented inputs and synthetic regression fixtures. [Guide](docs/original-tool.md) · [Original work](ORIGINAL_WORK.md).
+
+```bash
+python3 scripts/eval_results.py --input examples/eval-cases.json
+python3 -m unittest discover -s tests -v
+```
+
 ## What is inside
 
 | Track | Entries |

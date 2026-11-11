@@ -20,3 +20,5 @@ jobs:
           persist-credentials: false
       - name: Validate catalog and generated documents
         run: python3 scripts/arsenal.py check
+      - name: Run original tool regression tests
+        run: python3 -m unittest discover -s tests -v

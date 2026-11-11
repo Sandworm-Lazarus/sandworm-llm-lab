@@ -1,0 +1,104 @@
+{
+  "abstention_accuracy": {
+    "correct": 5,
+    "rate": 0.833333,
+    "total": 6
+  },
+  "answer_exact_match": {
+    "correct": 3,
+    "rate": 0.75,
+    "total": 4
+  },
+  "cases": [
+    {
+      "abstention_correct": true,
+      "answer_exact_match": true,
+      "citations": {
+        "f1": 1.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 1
+      },
+      "id": "english-authored-alias"
+    },
+    {
+      "abstention_correct": true,
+      "answer_exact_match": false,
+      "citations": {
+        "f1": 0.0,
+        "false_negative": 1,
+        "false_positive": 0,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "id": "english-cache-mismatch"
+    },
+    {
+      "abstention_correct": true,
+      "answer_exact_match": true,
+      "citations": {
+        "f1": 0.666667,
+        "false_negative": 0,
+        "false_positive": 1,
+        "precision": 0.5,
+        "recall": 1.0,
+        "true_positive": 1
+      },
+      "id": "thai-hours-extra-citation"
+    },
+    {
+      "abstention_correct": true,
+      "answer_exact_match": true,
+      "citations": {
+        "f1": 1.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 1
+      },
+      "id": "thai-shipping"
+    },
+    {
+      "abstention_correct": true,
+      "answer_exact_match": null,
+      "citations": {
+        "f1": null,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": null,
+        "recall": null,
+        "true_positive": 0
+      },
+      "id": "unknown-account-abstention"
+    },
+    {
+      "abstention_correct": false,
+      "answer_exact_match": null,
+      "citations": {
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 1,
+        "precision": 0.0,
+        "recall": null,
+        "true_positive": 0
+      },
+      "id": "unknown-npc-fabricated-answer"
+    }
+  ],
+  "cases_total": 6,
+  "citation_micro": {
+    "f1": 0.666667,
+    "false_negative": 1,
+    "false_positive": 2,
+    "precision": 0.6,
+    "recall": 0.75,
+    "true_positive": 3
+  },
+  "normalization": "NFC; collapse Unicode whitespace and trim; preserve case, punctuation and zero-width characters.",
+  "schema_version": 1,
+  "scope": "Recorded predictions only; no model execution or semantic/citation-support assessment."
+}

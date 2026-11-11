@@ -10,6 +10,15 @@
 
 คลังนี้มีสกิล 49 entries และเครื่องมือ 15 ตัว พร้อมลิงก์ที่ตรึง commit และคำอธิบายการใช้งาน อ่าน [เส้นทางเริ่มต้น](docs/start-here.md) เพื่อเลือกตามโจทย์
 
+## เครื่องมือที่พัฒนาเอง: Recorded Answer Evaluator
+
+วัด exact answer, citations และ abstention จากคำตอบที่บันทึกไว้ [Guide](docs/original-tool.md) · [Original work](ORIGINAL_WORK.md).
+
+```bash
+python3 scripts/eval_results.py --input examples/eval-cases.json
+python3 -m unittest discover -s tests -v
+```
+
 ## ค้นหาและตรวจข้อมูล
 
 ใช้ Python 3.9+ โดยไม่ต้องติดตั้ง dependencies เพิ่ม
