@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/banner.svg" alt="Sandworm LLM Lab" width="100%"></p>
 
-<p align="center"><b>49 skill entries · 14 tools · 23 source repositories</b></p>
+<p align="center"><b>49 skill entries · 15 tools · 24 source repositories</b></p>
 
 # Sandworm LLM Lab
 
@@ -24,6 +24,7 @@ A practical LLM engineering lab: model serving, quantization, RAG, evaluation, t
 | Observability | 2 |
 | Model gateways | 1 |
 | AI evaluation | 2 |
+| AI application SDKs | 1 |
 
 ## Use the collection
 

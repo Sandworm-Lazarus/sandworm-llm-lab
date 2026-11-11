@@ -38,6 +38,12 @@ Select a task, inspect the complete pinned package, then try a bounded synthetic
 | [LlamaFactory](https://github.com/hiyouga/LlamaFactory/tree/42b2a546a339b514fd8b88d63959be8fbe297485) | จัด fine-tuning ผ่าน CLI/Web UI พร้อม configs และ datasets | Version, configuration, one task result, failure behavior and data/permission boundaries |
 | [LiteLLM](https://github.com/BerriAI/litellm/tree/3616014548d40020f508566620c5cd8745721f3c) | รวม model providers ผ่าน SDK/proxy พร้อม cost/routing controls | Version, configuration, one task result, failure behavior and data/permission boundaries |
 
+## Integrate an application
+
+| Project | ใช้ทำอะไร | Evidence to collect |
+| --- | --- | --- |
+| [Vercel AI SDK](https://github.com/vercel/ai/tree/70e45d5878494be4b66e325187f865951025059e) | ต่อ text/streaming, structured outputs, tools และ UI สำหรับแอป TypeScript | Version, configuration, one task result, failure behavior and data/permission boundaries |
+
 ## Skill starting points
 
 | Entry | Task | Review |

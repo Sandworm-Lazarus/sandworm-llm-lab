@@ -4,7 +4,7 @@
 
 These are executable tools and frameworks, counted separately from agent skills. Their README/source overviews were inspected; this repository has not installed or run them. Links point to the recorded revision.
 
-**14 tools and frameworks in 6 groups.** See [start here](docs/start-here.md) for task-oriented selections.
+**15 tools and frameworks in 7 groups.** See [start here](docs/start-here.md) for task-oriented selections.
 
 | Group | Tools |
 | --- | ---: |
@@ -14,6 +14,7 @@ These are executable tools and frameworks, counted separately from agent skills.
 | [Observability](#observability) | 2 |
 | [Model gateways](#model-gateways) | 1 |
 | [AI evaluation](#ai-evaluation) | 2 |
+| [AI application SDKs](#ai-application-sdks) | 1 |
 
 <a id="local-inference"></a>
 
@@ -70,3 +71,11 @@ These are executable tools and frameworks, counted separately from agent skills.
 | --- | --- | --- |
 | [DeepEval](https://github.com/confident-ai/deepeval/tree/0ca198b4640277100efc28b5a862a0170d449c91) | เขียน eval สำหรับ outputs, RAG และ Agent/tool trajectories | Python, task fixtures และ judge/model backend ตาม metric. LLM judges มีต้นทุนและความคลาดเคลื่อน; รักษา acceptance checks ที่ตรวจได้อิสระ |
 | [Ragas](https://github.com/vibrantlabsai/ragas/tree/298b68274234c060deacab3cf5fb52aa3a20e885) | วัดคุณภาพ LLM/RAG และสร้าง test sets จากข้อมูลตัวอย่าง | Python, dataset และ LLM/embedding backend ตาม metric. Synthetic tests และ judge scores ต้องตรวจ bias/coverage ก่อนตัดสินระบบจริง |
+
+<a id="ai-application-sdks"></a>
+
+## AI application SDKs
+
+| Tool | ใช้ทำอะไร | ต้องมี / ข้อจำกัด |
+| --- | --- | --- |
+| [Vercel AI SDK](https://github.com/vercel/ai/tree/70e45d5878494be4b66e325187f865951025059e) | ต่อ text/streaming, structured outputs, tools และ UI สำหรับแอป TypeScript | Node 22+ ตาม README ที่อ่าน, provider adapter หรือ gateway และ UI integration ตามงาน. String model ID อาจเลือก Vercel AI Gateway; adapter โดยตรงเป็นอีกเส้นทาง ต้องบันทึก provider/billing route |

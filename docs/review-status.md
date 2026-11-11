@@ -8,9 +8,9 @@ Snapshot: **2026-11-11** · `2026-11-11-sandworm-llm-lab`
 | --- | ---: |
 | Skill entries | 49 |
 | Skill collections | 9 |
-| Companion tools | 14 |
-| Tool categories | 6 |
-| Source repositories | 23 |
+| Companion tools | 15 |
+| Tool categories | 7 |
+| Source repositories | 24 |
 | Entry-reviewed | 17 |
 | Entry-overview | 32 |
 | Runtime-tested upstream skills | 0 |

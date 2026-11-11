@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/banner.svg" alt="Sandworm LLM Lab" width="100%"></p>
 
-<p align="center"><b>49 skill entries · 14 tools · 23 source repositories</b></p>
+<p align="center"><b>49 skill entries · 15 tools · 24 source repositories</b></p>
 
 # Sandworm LLM Lab
 
@@ -8,7 +8,7 @@
 
 [English](README.md) · [Skills](CATALOG.md) · [Tools](TOOLS.md) · [Start here](docs/start-here.md) · [Sources](SOURCES.md) · [หน้ารวมทุกคลัง](https://github.com/Sandworm-Lazarus/sandworm-arsenal)
 
-คลังนี้มีสกิล 49 entries และเครื่องมือ 14 ตัว พร้อมลิงก์ที่ตรึง commit และคำอธิบายการใช้งาน อ่าน [เส้นทางเริ่มต้น](docs/start-here.md) เพื่อเลือกตามโจทย์
+คลังนี้มีสกิล 49 entries และเครื่องมือ 15 ตัว พร้อมลิงก์ที่ตรึง commit และคำอธิบายการใช้งาน อ่าน [เส้นทางเริ่มต้น](docs/start-here.md) เพื่อเลือกตามโจทย์
 
 ## ค้นหาและตรวจข้อมูล
 

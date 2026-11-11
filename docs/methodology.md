@@ -1,6 +1,6 @@
 # Methodology
 
-This focused collection derives from the `2026-11-11-ai-toolbox` research snapshot in the Sandworm Arsenal hub. It contains 49 skill entries and 14 tools from 23 repositories. Stable entry IDs, pinned revisions, blob identities and scope labels are retained.
+This focused collection derives from the `2026-11-11-mcp-typescript-privacy` research snapshot in the Sandworm Arsenal hub. It contains 49 skill entries and 15 tools from 24 repositories. Stable entry IDs, pinned revisions, blob identities and scope labels are retained.
 
 `entry-reviewed` records an entry-file read with selected supporting evidence. `entry-overview` records frontmatter and an opening excerpt. `readme-overview` records introductory tool README/license inspection. None means that every bundled file was reviewed or that external code was executed.
 

@@ -2,7 +2,7 @@
 
 [Home](README.md) · [Skill catalog](CATALOG.md) · [Reuse notes](docs/attribution.md)
 
-Snapshot: **2026-11-11**. The 23 sources include skill collections, tools and frameworks. License descriptions apply to the inspected snapshot and scope; follow the linked texts before reuse.
+Snapshot: **2026-11-11**. The 24 sources include skill collections, tools and frameworks. License descriptions apply to the inspected snapshot and scope; follow the linked texts before reuse.
 
 Generated from `catalog/arsenal.json` with `python3 scripts/arsenal.py render`.
 
@@ -31,6 +31,7 @@ Generated from `catalog/arsenal.json` with `python3 scripts/arsenal.py render`.
 | [BerriAI/litellm](https://github.com/BerriAI/litellm) · [36160145](https://github.com/BerriAI/litellm/tree/3616014548d40020f508566620c5cd8745721f3c) | [MIT outside enterprise directory; separate enterprise terms](https://github.com/BerriAI/litellm/blob/3616014548d40020f508566620c5cd8745721f3c/LICENSE) | MIT scope แยก enterprise directory; gateway ไม่เพิ่มสิทธิ์หรือโควตาจาก model provider |
 | [confident-ai/deepeval](https://github.com/confident-ai/deepeval) · [0ca198b4](https://github.com/confident-ai/deepeval/tree/0ca198b4640277100efc28b5a862a0170d449c91) | [Apache-2.0](https://github.com/confident-ai/deepeval/blob/0ca198b4640277100efc28b5a862a0170d449c91/LICENSE.md) | LLM judges มีต้นทุนและความคลาดเคลื่อน; รักษา acceptance checks ที่ตรวจได้อิสระ |
 | [vibrantlabsai/ragas](https://github.com/vibrantlabsai/ragas) · [298b6827](https://github.com/vibrantlabsai/ragas/tree/298b68274234c060deacab3cf5fb52aa3a20e885) | [Apache-2.0](https://github.com/vibrantlabsai/ragas/blob/298b68274234c060deacab3cf5fb52aa3a20e885/LICENSE) | Synthetic tests และ judge scores ต้องตรวจ bias/coverage ก่อนตัดสินระบบจริง |
+| [vercel/ai](https://github.com/vercel/ai) · [70e45d58](https://github.com/vercel/ai/tree/70e45d5878494be4b66e325187f865951025059e) | [Apache-2.0](https://github.com/vercel/ai/blob/70e45d5878494be4b66e325187f865951025059e/LICENSE) | String model ID อาจเลือก Vercel AI Gateway; adapter โดยตรงเป็นอีกเส้นทาง ต้องบันทึก provider/billing route |
 
 ## Supporting files read in the initial focused review
 
